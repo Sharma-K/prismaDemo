@@ -12,8 +12,9 @@ datasource db {
 
 model User {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
-  name  String @unique
+  name  String 
   email String
+  password String
   posts Post[]
 }
 
@@ -22,12 +23,6 @@ model Post {
   title    String
   authorId String?   @db.ObjectId
   author   User?     @relation(fields: [authorId], references: [id])
-  comments Comment[]
+  
 }
 
-model Comment {
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  comment String
-  post   Post?   @relation(fields: [postId], references: [id])
-  postId String? @db.ObjectId
-}
