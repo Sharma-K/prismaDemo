@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "prisma": "^4.15.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
